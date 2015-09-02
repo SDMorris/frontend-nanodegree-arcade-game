@@ -30,7 +30,7 @@ What is it?
 	Learning more
 	-------------
 	If you are interested in learning Front End Web Design or other
-	internet technology courses take a look at:  
+	internet technology courses take a look at:
 	www.udacity.com
 
 	  I am a student of Udacity but have no other relationship.
