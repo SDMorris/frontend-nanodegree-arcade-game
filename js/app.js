@@ -1,6 +1,6 @@
 // Enemies our player must avoid
 var Enemy = function(loc,speed) {
-   'use strict'
+   'use strict';
    // *** Defines enemy object  ***
    this.x = 0;
    this.y= loc;
@@ -11,11 +11,11 @@ var Enemy = function(loc,speed) {
    // The image/sprite for our enemies, this uses
    // a helper we've provided to easily load images
    this.sprite = 'images/enemy-bug.png';
-}
+};
 
 //collision detection
-var Enemy.prototype.iscolide = function(obj1x, obj1y, obj2x, obj2y, range){
-  'use strict'
+Enemy.prototype.iscolide = function(obj1x, obj1y, obj2x, obj2y, range){
+  'use strict';
   // ************************************************************
   // *** Each enemy detects if there is collision with player ***
   // ************************************************************
@@ -28,7 +28,7 @@ var Enemy.prototype.iscolide = function(obj1x, obj1y, obj2x, obj2y, range){
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
-    'use strict'
+    'use strict';
     // ******************************************************
     // *** You should multiply any movement by the dt parameter
     // *** which will ensure the game runs at the same speed for
@@ -44,16 +44,16 @@ Enemy.prototype.update = function(dt) {
     if ( this.x > 490 ) {
        this.x = 0;
     }
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
   // ***************************************************
   // *** Draws Enemy Image                                 ***
   // ***************************************************
-   'use strict'
+   'use strict';
    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //Enemy.prototype.constuctor = Enemy;
 // Now write your own layer class
@@ -68,22 +68,22 @@ var Player = function() {
   //  *** To Do: Refactor code by inheriting        ***
   //  *** funtionality from enemy object.           ****
   //  *************************************************
-   'use strict'
+   'use strict';
    this.speed = 81;
    this.x = 200;
    this.y = 400;
    this.sprite = 'images/char-boy.png';
-}
+};
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
 Player.prototype.update = function(dt) {
-   'use strict'
+   'use strict';
    // You should multiply any movement by the dt parameter
    // which will ensure the game runs at the same speed for
    // all computers.
    this.dt = dt;
-}
+};
 
 Player.prototype.handleInput= function(keycode){
   //  **********************************************************
@@ -93,14 +93,14 @@ Player.prototype.handleInput= function(keycode){
   //  *** the player is not allowed to move outside of the   ***
   //  *** game area.                                         ***
   //  **********************************************************
-  'use strict'
+  'use strict';
   //37: 'left',
   //38: 'up',
   //39: 'right',
   //40: 'down'
   switch ( keycode ){
     case 'left':
-      if (this.x == 0) {
+      if (this.x === 0) {
         break;
       }
       this.x = this.x - 100;
@@ -129,17 +129,17 @@ Player.prototype.handleInput= function(keycode){
       this.y = this.y + (this.speed);
       break;
     }
-}
+};
 
 // Draw the player on the screen, required method for game
 Player.prototype.render = function() {
   // ***********************************************
   // *** Draws player image                      ***
   // ***********************************************
-   'use strict'
+   'use strict';
    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 
-}
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -159,7 +159,7 @@ document.addEventListener('keyup', function(e) {
   // **************************************************
   // ***  predefined function: listens for keypress ***
   // **************************************************
-    'use strict'
+    'use strict';
     var allowedKeys = {
         37: 'left',
         38: 'up',
